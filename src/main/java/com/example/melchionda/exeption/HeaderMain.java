@@ -1,4 +1,4 @@
-package com.example.astolfi.exception;
+package com.example.melchionda.exeption;
 
 import java.io.IOException;
 
@@ -9,6 +9,6 @@ public class HeaderMain {
 		String header = headerService.getHeader();
 		
 		System.out.printf("%s\n", header);
-		System.out.printf("Benvenuti nel nostro sito\n");
+		System.out.printf("Benvenuti nel sito \n");
 	}
 }
