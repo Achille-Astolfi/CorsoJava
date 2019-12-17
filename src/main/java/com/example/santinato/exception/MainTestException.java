@@ -2,7 +2,7 @@ package com.example.santinato.exception;
 
 public class MainTestException {
 	public static void main(String[] args) {
-		// creo un oggetto TestException
+		// creo un oggetto di nome testException della classe tipo TestException
 		
 		TestException testexception = new TestException();
 		
