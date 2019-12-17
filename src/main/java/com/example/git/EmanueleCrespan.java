@@ -7,10 +7,10 @@ public class EmanueleCrespan {
 	public int alleluiaJesu;
 	public int babbo;
 
-	private EmanueleCrespan instance;
+	private static EmanueleCrespan instance;
 	private EmanueleCrespan() {}
 	
-	public EmanueleCrespan getInstance() {
+	public static EmanueleCrespan getInstance() {
 		if(instance==null)
 			instance=new EmanueleCrespan();
 		return instance;
