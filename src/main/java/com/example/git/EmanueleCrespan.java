@@ -6,4 +6,5 @@ public class EmanueleCrespan {
 	//basta modificare la mia classe
 	
 	public int AlleluiaJesù;
+	public int babbo;
 }
