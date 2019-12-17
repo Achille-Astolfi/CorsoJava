@@ -14,7 +14,15 @@ public class HeaderServiceRevised {
 		// metodo alternativo a BufferdReader
 		try (Scanner scanner = new Scanner(path)) {
 			if (scanner.hasNextLine()) {
-				return scanner.nextLine();
+				String candidateHeader = scanner.nextLine();
+				// il metodo trim() di String elimina tutti gli "spazi" iniziali e finali
+				// per "spazio" si intende "whitespace" ossia i caratteri nel range 0-32 di ASCII
+				// e UTF-8, che comprende anche "tabulazione", "a capo" eccetera
+				if (!candidateHeader.trim().isEmpty())  {
+					return candidateHeader;
+				} else {
+					return null;
+				}
 			}
 		}
 		// se arrivo qui significa che il file era vuoto
@@ -23,23 +31,24 @@ public class HeaderServiceRevised {
 		return null;
 	}
 	
-	private String readHeaderFromFiles() {
-		List<Path> paths = new ArrayList<>();
-		paths.add(Paths.get("C:", "Windows", "System32", "drivers", "etc", "header.txt"));
-		paths.add(Paths.get("C:", "Temp", "header.txt"));
+	private String readHeaderFromFiles(String fileName) {
+		List<Path> paths = new ArrayList<>(); // questa è una list di directory dove cercare il file
+		paths.add(Paths.get("C:", "Windows", "System32", "drivers", "etc"));
+		paths.add(Paths.get("C:", "Temp"));
 		
 		for (Path p : paths) {
 			try {
-				String header = readHeaderFromPath(p);
+				// per aggiungere il nome del file a una Path si usa il metodo resolve
+				String header = readHeaderFromPath(p.resolve(fileName));
 				if (header != null) {
 					return header;
 				}
 				// altrimenti potrei lasciare un output informativo
-				System.out.printf("INFO Il file %s è vuoto.\n", p);
+				System.out.printf("INFO Il file dentro %s è vuoto.\n", p);
 			} catch (IOException e) {
 				// non faccio nulla, passo all'elemento successivo
 				// mi lascio un output informativo sulla console
-				System.out.printf("INFO Non ho trovato: %s\n", p);
+				System.out.printf("INFO Non ho trovato il file dentro: %s\n", p);
 			}
 		}
 		// se arrivo qui: vuol dire che tutti i file erano vuoti o non esistevano
@@ -49,7 +58,7 @@ public class HeaderServiceRevised {
 	}
 	
 	public String getHeader() {
-		String header = readHeaderFromFiles();
+		String header = readHeaderFromFiles("header.txt");
 		if (header != null) {
 			return header;
 		} else {
