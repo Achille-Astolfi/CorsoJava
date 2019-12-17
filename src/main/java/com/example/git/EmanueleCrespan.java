@@ -1,10 +1,5 @@
 package com.example.git;
-
+import java.util.*;
 public class EmanueleCrespan {
-
-	public int ciao=8;
-	//basta modificare la mia classe
-	
-	public int AlleluiaJesù;
-	public int babbo;
+	private int crespan=5;
 }
