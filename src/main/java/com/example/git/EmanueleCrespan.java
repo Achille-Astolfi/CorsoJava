@@ -1,6 +1,5 @@
 package com.example.git;
-
+import java.util.*;
 public class EmanueleCrespan {
-	public int ciao;
-	public int babbo;
+	private int crespan=5;
 }
