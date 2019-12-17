@@ -4,8 +4,13 @@ import java.io.IOException;
 
 public class MainHeader {
 	public static void main(String[] args) throws IOException {
-		HeaderService headerService = new HeaderService();
 		
-		System.out.println(headerService.getHeader());
+		// Uso l'HeaderService semplificato
+		HeaderService headerService = new HeaderService();
+		System.out.println("Ecco cosa ho letto usando il metodo semplificato: \n" + headerService.getHeader() + "\n");
+		
+		// Uso l'HeaderService avanzato
+		HeaderServiceRevised headerServiceAdvanced = new HeaderServiceRevised();
+		System.out.println("Ecco cosa ho letto usando il metodo avanzato: \n" + headerService.getHeader() + "\n");
 	}
 }
