@@ -1,7 +1,7 @@
 package com.example.git;
 
 public class EmanueleCrespan {
-	public int ciao=8;
+	public int ciao=9;
 	//basta modificare la mia classe
 	
 	public int AlleluiaJesù;
