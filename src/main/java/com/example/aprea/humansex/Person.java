@@ -6,6 +6,8 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private HumanSex gender;
+	private MaritalStatus maritalStatus;
+	private int age;
 	// in questo modo gli oggetti di Person che creo avranno nome, cognome e sesso come campi
 
 	// genero getter e setter
@@ -31,5 +33,21 @@ public class Person {
 
 	public void setGender(HumanSex gender) {
 		this.gender = gender;
+	}
+
+	public MaritalStatus getMaritalStatus() {
+		return maritalStatus;
+	}
+
+	public void setMaritalStatus(MaritalStatus maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int i) {
+		this.age = i;
 	}
 }

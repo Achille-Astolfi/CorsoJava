@@ -18,9 +18,6 @@ public class HumanSexMain {
 		// ho anche un metodo del tipo valueOf che ha un parametro String che converte "al contrario" dalla String mi ricostruisce l'oggetto
 		HumanSex notApplicable = HumanSex.valueOf("NOT_APPLICABLE");
 		// verifica
-		System.out.printf("Ho ottenuto l'oggetto: %s\n", notApplicable);
-		
-		
-		
+		System.out.printf("Ho ottenuto l'oggetto: %s\n", notApplicable);		
 	}
 }
